@@ -1,0 +1,53 @@
+
+
+/*********************************************************************
+ * Be sure to include all headers here that relate to the symbols
+ * below.
+ ********************************************************************/
+#include "DemoObj.h"
+
+
+/*********************************************************************
+ * This memory region defines standard objects. All the 
+ * indices in this definition must range from 0x6000 to 0x6FFF. 
+ ********************************************************************/
+#define		DICTIONARY_STANDARD_1							\\
+			{0x6000,0x00,RO,1,{(rom unsigned char *)&uLocalXmtBuffer[0]}},	\\
+			{0x6002,0x00,CONST,1,{(rom unsigned char *)&rMaxIndex1}}, 	\\
+			{0x6002,0x01,RW,1,{(rom unsigned char *)&uIOinPolarity}}, 	\\
+			{0x6003,0x00,CONST,1,{(rom unsigned char *)&rMaxIndex1}}, 	\\
+			{0x6003,0x01,RW,1,{(rom unsigned char *)&uIOinFilter}}, 	\\
+			{0x6005,0x00,CONST,1,{(rom unsigned char *)&rMaxIndex1}}, 	\\
+			{0x6005,0x01,RW,1,{(rom unsigned char *)&uIOinIntEnable}},	\\
+			{0x6006,0x00,CONST,1,{(rom unsigned char *)&rMaxIndex1}}, 	\\
+			{0x6006,0x01,RW,1,{(rom unsigned char *)&uIOinIntChange}},	\\
+			{0x6007,0x00,CONST,1,{(rom unsigned char *)&rMaxIndex1}}, 	\\
+			{0x6007,0x01,RW,1,{(rom unsigned char *)&uIOinIntRise}},	\\
+			{0x6008,0x00,CONST,1,{(rom unsigned char *)&rMaxIndex1}}, 	\\
+			{0x6008,0x01,RW,1,{(rom unsigned char *)&uIOinIntFall}},	\\
+			{0x6200,0x00,RW,1,{(rom unsigned char *)&uLocalRcvBuffer[0]}}
+
+/*********************************************************************
+ * This memory region defines standard objects. All the 
+ * indices in this definition must range from 0x7000 to 0x7FFF. 
+ ********************************************************************/
+#define		DICTIONARY_STANDARD_2							\\
+			{0x7000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x7000,0x00,0,1,{(rom unsigned char *)&__dummy}}
+
+/*********************************************************************
+ * This memory region defines standard objects. All the 
+ * indices in this definition must range from 0x8000 to 0x8FFF. 
+ ********************************************************************/
+#define		DICTIONARY_STANDARD_3							\\
+			{0x8000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x8000,0x00,0,1,{(rom unsigned char *)&__dummy}}
+
+/*********************************************************************
+ * This memory region defines standard objects. All the 
+ * indices in this definition must range from 0x9000 to 0x9FFF. 
+ ********************************************************************/
+#define		DICTIONARY_STANDARD_4							\\
+			{0x9000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x9000,0x00,0,1,{(rom unsigned char *)&__dummy}}
+				

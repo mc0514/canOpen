@@ -1,0 +1,35 @@
+
+
+
+
+/*********************************************************************
+ * This memory region defines manufacturer specific objects. All the 
+ * indices in this definition must range from 0x2000 to 0x2FFF. 
+ ********************************************************************/
+#define		DICTIONARY_MANUFACTURER_SPECIFIC_1										\\
+			{0x2000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x2000,0x00,0,1,{(rom unsigned char *)&__dummy}}
+				
+/*********************************************************************
+ * This memory region defines manufacturer specific objects. All the 
+ * indices in this definition must range from 0x3000 to 0x3FFF. 
+ ********************************************************************/
+#define		DICTIONARY_MANUFACTURER_SPECIFIC_2				\\
+			{0x3000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x3000,0x00,0,1,{(rom unsigned char *)&__dummy}}
+				
+/*********************************************************************
+ * This memory region defines manufacturer specific objects. All the 
+ * indices in this definition must range from 0x4000 to 0x4FFF. 
+ ********************************************************************/
+#define		DICTIONARY_MANUFACTURER_SPECIFIC_3				\\
+			{0x4000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x4000,0x00,0,1,{(rom unsigned char *)&__dummy}}
+				
+/*********************************************************************
+ * This memory region defines manufacturer specific objects. All the 
+ * indices in this definition must range from 0x5000 to 0x5FFF. 
+ ********************************************************************/
+#define		DICTIONARY_MANUFACTURER_SPECIFIC_4				\\
+			{0x5000,0x00,0,1,{(rom unsigned char *)&__dummy}},			\\
+			{0x5000,0x00,0,1,{(rom unsigned char *)&__dummy}}

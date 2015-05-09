@@ -1,0 +1,83 @@
+
+
+
+//#define CAN_BITRATE0_BRGCON1	0x41
+//#define CAN_BITRATE0_BRGCON2	0xBA
+//#define CAN_BITRATE0_BRGCON3	0x07
+
+// 1 Mbps. Number of time quantas = 10. Sample point = 80%.
+// However according to:
+// http://www.softing.com/home/en/industrial-automation/products/can-bus/more-can-open/timing/bit-timing-specification.php
+// CANopen 1Mbps baudrate should just use 8TQ. That is not found in the CiA 301 specs however.
+// SJW = 2
+// BRGCON1 = 01|00_0000 = 0x40
+// BRGCON2 = 10|011|010 = 0x9A
+// BRGCON3 = 0000_0001  = 0x01
+#define	CAN_BITRATE0			1
+#define CAN_BITRATE0_BRGCON1	0x40
+#define CAN_BITRATE0_BRGCON2	0x9A
+#define CAN_BITRATE0_BRGCON3	0x01
+
+//#define CAN_BITRATE0                  1
+//#define CAN_BITRATE0_BRGCON1	0x44
+//#define CAN_BITRATE0_BRGCON2	0xBF
+//#define CAN_BITRATE0_BRGCON3	0x17
+
+#define	CAN_BITRATE1			1
+#define CAN_BITRATE1_BRGCON1	0x41
+#define CAN_BITRATE1_BRGCON2	0xBA
+#define CAN_BITRATE1_BRGCON3	0x07
+
+#define	CAN_BITRATE2			1
+#define CAN_BITRATE2_BRGCON1	0x41
+#define CAN_BITRATE2_BRGCON2	0xBA
+#define CAN_BITRATE2_BRGCON3	0x07
+
+#define	CAN_BITRATE3			1
+#define CAN_BITRATE3_BRGCON1	0x41
+#define CAN_BITRATE3_BRGCON2	0xBA
+#define CAN_BITRATE3_BRGCON3	0x07
+
+#define	CAN_BITRATE4			1
+#define CAN_BITRATE4_BRGCON1	0x41
+#define CAN_BITRATE4_BRGCON2	0xBA
+#define CAN_BITRATE4_BRGCON3	0x07
+
+// 125kbps
+// 20MHz processor. 16TQ. Sample point = 14 / 16 = 87.5%.
+#define	CAN_BITRATE5			1
+#define CAN_BITRATE5_BRGCON1	0x04
+#define CAN_BITRATE5_BRGCON2	0xBC
+#define CAN_BITRATE5_BRGCON3	0x01
+
+//#define	CAN_BITRATE5			1
+//#define CAN_BITRATE5_BRGCON1	0x41
+//#define CAN_BITRATE5_BRGCON2	0xBA
+//#define CAN_BITRATE5_BRGCON3	0x07
+
+#define	CAN_BITRATE6			1
+#define CAN_BITRATE6_BRGCON1	0x41
+#define CAN_BITRATE6_BRGCON2	0xBA
+#define CAN_BITRATE6_BRGCON3	0x07
+
+#define	CAN_BITRATE7			1
+#define CAN_BITRATE7_BRGCON1	0x41
+#define CAN_BITRATE7_BRGCON2	0xBA
+#define CAN_BITRATE7_BRGCON3	0x07
+
+#define	CAN_BITRATE8			1
+#define CAN_BITRATE8_BRGCON1	0x41
+#define CAN_BITRATE8_BRGCON2	0xBA
+#define CAN_BITRATE8_BRGCON3	0x07
+
+#define CAN_MAX_RCV_ENDP	8
+
+#define CO_NUM_OF_PDO           4 // 1 by default. Changed to 4. Staffan
+
+#define	CO_SPEED_UP_CODE	0
+
+#define CO_TICK_PERIOD		8
+
+#define	CO_SDO1_MAX_RX_BUF	20
+#define CO_SDO1_MAX_SEG_TIME	500		// Time in milliseconds
+

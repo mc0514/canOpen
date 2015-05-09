@@ -1,0 +1,73 @@
+
+/*********************************************************************
+ * Be sure to include all headers here that relate to the symbols
+ * below.
+ ********************************************************************/
+
+#include	"CO_DEV.H"		// Standard device information
+#include	"CO_SYNC.H"		// SYNC Object support
+#include	"CO_NMTE.H"		// Error protocols: heartbeat, node-guard
+#include	"CO_SDO1.H"		// SDO1, the default SDO
+
+
+
+
+//			<index_l>,<index_h>,<sub index>,<type>,<count>,<ptr>
+
+/*********************************************************************
+ * This memory region defines the data types. All the indices in this
+ * definition must range from 0x0001 to 0x009F. According to the 
+ * CANOpen specification these are not required to be handled. If 
+ * they are implimented then they should be read only and return the 
+ * length of the object.
+ ********************************************************************/
+#define		DICTIONARY_DATA_TYPES										\\
+			{0x0001,0x00,WO | ROM_BIT | MAP_BIT,1,{(rom unsigned char *)&__dummy[0]}},		\\
+			{0x0002,0x00,WO | ROM_BIT | MAP_BIT,1,{(rom unsigned char *)&__dummy[0]}},		\\
+			{0x0003,0x00,WO | ROM_BIT | MAP_BIT,2,{(rom unsigned char *)&__dummy[0]}},		\\
+			{0x0004,0x00,WO | ROM_BIT | MAP_BIT,4,{(rom unsigned char *)&__dummy[0]}},		\\
+			{0x0005,0x00,WO | ROM_BIT | MAP_BIT,1,{(rom unsigned char *)&__dummy[0]}},		\\
+			{0x0006,0x00,WO | ROM_BIT | MAP_BIT,2,{(rom unsigned char *)&__dummy[0]}},		\\
+			{0x0007,0x00,WO | ROM_BIT | MAP_BIT,4,{(rom unsigned char *)&__dummy[0]}}
+
+/*********************************************************************
+ * This memory region defines the device. All the indices in this
+ * definition must range from 0x1000 to 0x10FF. 
+ ********************************************************************/
+#define		DICTIONARY_DEVICE_INFO																	\\
+			{0x1000,0x00,CONST,4,{(rom unsigned char *)&rCO_DevType}},								\\
+			{0x1001,0x00,RO,1,{(rom unsigned char *)&uCO_DevErrReg}},								\\
+			{0x1002,0x00,RO,4,{(rom unsigned char *)&uCO_DevManufacturerStatReg}},					\\
+			{0x1005,0x00,FUNC | RW,4,{(rom unsigned char *)&_CO_COMM_SYNC_COBIDAccessEvent}},		\\
+			{0x1008,0x00,CONST,24,{(rom unsigned char *)&rCO_DevName}},								\\
+			{0x1009,0x00,CONST,4,{(rom unsigned char *)&rCO_DevHardwareVer}},						\\
+			{0x100A,0x00,CONST,4,{(rom unsigned char *)&rCO_DevSoftwareVer}},						\\
+			{0x100C,0x00,FUNC | RW,2,{(rom unsigned char *)&_CO_COMM_NMTE_GuardTimeAccessEvent}},	\\
+			{0x100D,0x00,FUNC | RW,1,{(rom unsigned char *)&_CO_COMM_NMTE_LifeFactorAccessEvent}},	\\
+			{0x1017,0x00,FUNC | RW,2,{(rom unsigned char *)&_CO_COMM_NMTE_HeartBeatAccessEvent}},	\\
+			{0x1018,0x00,CONST,1,{(rom unsigned char *)&rCO_DevIdentityIndx}},						\\
+			{0x1018,0x01,CONST,4,{(rom unsigned char *)&rCO_DevVendorID}},							\\
+			{0x1018,0x02,CONST,4,{(rom unsigned char *)&rCO_DevProductCode}},						\\
+			{0x1018,0x03,CONST,4,{(rom unsigned char *)&rCO_DevRevNo}},								\\
+			{0x1018,0x04,CONST,4,{(rom unsigned char *)&rCO_DevSerialNo}}
+			
+/*********************************************************************
+ * This memory region defines the SDOs. All the indices in this
+ * definition must range from 0x1200 to 0x12FF. SDO servers range
+ * from 0x1200 to 0x127F. SDO clients range from 0x1280 to 0x13FF.
+ ********************************************************************/
+#define		DICTIONARY_SDO																			\\
+			{0x1200,0x00,CONST,1,{(rom unsigned char *)&_uSDO1COMMIndx}},							\\
+			{0x1200,0x01,FUNC | RO,4,{(rom unsigned char *)&_CO_COMM_SDO1_CS_COBIDAccessEvent}},	\\
+			{0x1200,0x02,FUNC | RO,4,{(rom unsigned char *)&_CO_COMM_SDO1_SC_COBIDAccessEvent}}
+			
+
+
+	
+				
+				
+				
+				
+				
+				
+				
